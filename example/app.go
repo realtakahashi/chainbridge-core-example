@@ -10,7 +10,7 @@ import (
 
 	"github.com/ChainSafe/chainbridge-core/chains/evm/evmtransaction"
 
-	"github.com/ChainSafe/chainbridge-celo-module/transaction"
+//	"github.com/ChainSafe/chainbridge-celo-module/transaction"
 
 	"github.com/ChainSafe/chainbridge-core/chains/evm"
 	"github.com/ChainSafe/chainbridge-core/chains/evm/evmclient"
@@ -45,7 +45,7 @@ func Run() error {
 	celoListener1 := listener.NewEVMListener(celo1Client, eventHandler, common.HexToAddress(celo1Cfg.SharedEVMConfig.Bridge))
 	mh := voter.NewEVMMessageHandler(celo1Client, common.HexToAddress(celo1Cfg.SharedEVMConfig.Bridge))
 	mh.RegisterMessageHandler(common.HexToAddress(celo1Cfg.SharedEVMConfig.Erc20Handler), voter.ERC20MessageHandler)
-	celoVoter1 := voter.NewVoter(mh, celo1Client, transaction.NewCeloTransaction)
+	celoVoter1 := voter.NewVoter(mh, celo1Client, evmtransaction.NewTransaction)
 	celoChain1 := evm.NewEVMChain(celoListener1, celoVoter1, db, *celo1Cfg.SharedEVMConfig.GeneralChainConfig.Id, &celo1Cfg.SharedEVMConfig)
 
 	////EVM setup
