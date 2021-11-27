@@ -1,0 +1,11 @@
+[Unit]
+Description = Bridge
+After=network-online.target
+
+[Service]
+ExecStart=/home/es_admin/testnet_env/chainbridge-core-example/chainbridge-core-example run --config ./config --testkey alice --latest 
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
