@@ -9,7 +9,7 @@ require (
 	github.com/centrifuge/go-substrate-rpc-client v2.0.0+incompatible
 	github.com/ethereum/go-ethereum v1.10.8
 	github.com/rs/zerolog v1.23.0
-	github.com/spf13/cobra v1.1.3
-	github.com/spf13/viper v1.8.0
-	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e
+	github.com/spf13/cobra v1.3.0
+	github.com/spf13/viper v1.10.0
+	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5
 )
